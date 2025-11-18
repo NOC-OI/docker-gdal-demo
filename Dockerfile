@@ -1,4 +1,5 @@
-FROM jupyter/base-notebook
+FROM quay.io/jupyter/base-notebook
 
-RUN conda install gdal
-Run conda install matplotlib
+RUN mamba install -y gdal matplotlib
+COPY *.tif /home/jovyan/work
+COPY *.ipynb /home/jovyan/work
